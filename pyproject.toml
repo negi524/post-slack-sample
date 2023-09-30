@@ -1,16 +1,16 @@
 [tool.poetry]
-name = "python-starter"
+name = "post-slack-sample"
 version = "1.1.5"
 description = "Template for Python project"
 authors = ["negi524 <egtnrumpbiizarre.info@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [
-    { include = "application_setting", from = "python_starter" }
+    { include = "application_setting", from = "post_slack_sample" }
   ]
 
 [tool.poetry.scripts]
-dev = "python_starter.main:main"
+dev = "post_slack_sample.main:main"
 
 [tool.poetry.dependencies]
 python = "^3.11"

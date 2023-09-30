@@ -1,5 +1,5 @@
-# python-starter
-Pythonのプロジェクトテンプレート
+# post-slack-sample
+Slackに投稿するサンプルコード
 
 ## プロジェクトインストール
 
@@ -10,13 +10,13 @@ poetry install
 ## credentialファイル作成
 
 ```bash
-cp python_starter/.env.sample python_starter/.env
+cp post_slack_sample/.env.sample post_slack_sample/.env
 ```
 
 ## プログラム実行
 
 ```bash
-poetry run python python_starter/main.py
+poetry run python post_slack_sample/main.py
 ```
 
 or 

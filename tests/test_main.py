@@ -1,4 +1,4 @@
-from python_starter.main import add_one
+from post_slack_sample.main import add_one
 
 
 def test_add_one():
