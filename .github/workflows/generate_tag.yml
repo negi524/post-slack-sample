@@ -1,0 +1,34 @@
+name: Generate git tag
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+permissions:
+  actions: write
+  contents: write
+
+jobs:
+  push_tag:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.11"
+    - name: Setup poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+        poetry --version
+    - name: Generate tag
+      run: |
+        # pyproject.tomlからバージョン取得
+        export TAG_VERSION=$(poetry version | awk '{print $2}')
+        # 取得したバージョンでタグを生成
+        git tag $TAG_VERSION
+        git push origin $TAG_VERSION
