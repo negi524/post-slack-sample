@@ -6,4 +6,5 @@ from pathlib import Path
 credential_file_path: str = f"{Path(__file__).resolve().parent.parent}/.env"
 
 load_dotenv(credential_file_path)
-KEY = os.getenv("KEY")
+SLACK_TOKEN = os.getenv("SLACK_TOKEN")
+SLACK_CHANNEL_ID = os.getenv("SLACK_CHANNEL_ID")

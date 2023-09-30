@@ -1,7 +1,6 @@
 import application_setting.my_logger as mylogger
 from logging import Logger
 import application_setting.my_credential as mycredential
-from typing import Optional
 
 # loggerを取得
 logger: Logger = mylogger.get_logger("main")
@@ -9,7 +8,8 @@ logger: Logger = mylogger.get_logger("main")
 
 def main():
     logger.info("hello, world.")
-    print(mycredential.KEY)
+    print(mycredential.SLACK_TOKEN)
+    print(mycredential.SLACK_CHANNEL_ID)
 
 
 def add_one(number: int) -> int:
